@@ -15,34 +15,30 @@
 </head>
 <body>
     <div class="d-flex justify-content-center m-5">
-        <h1><strong>Welcome to Alex. You read, we track.</strong></h1>
+        <h1><strong>Welcome to Alex. You read, We track.</strong></h1>
     </div>
     <div class="d-flex justify-content-center m-5" id="new-book-btn">
         <button type="button" class="btn btn-dark">New Book</button>
     </div>
-    <div class="d-flex justify-content-center d-none" id="new-book-form">
-        <div class="card w-50">
-            <div class="card-body">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="card w-50 d-none p-5" id="new-book-form">
                 <form id="book-form">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
-                        <textarea class="form-control mb-3" id="title" rows="1"></textarea>
-                        <label for="author" class="form-label">Author</label>
-                        <textarea class="form-control mb-3" id="author" rows="1"></textarea>
-                        <label for="pages" class="form-label">Pages</label>
-                        <textarea class="form-control mb-3" id="pages" rows="1"></textarea>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="read">
-                            <label class="form-check-label mb-3" for="flexCheckDefault">
-                            Read
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-dark">Submit</button>
+                    <label for="title" class="form-label">Title</label>
+                    <textarea class="form-control mb-3" id="title" rows="1"></textarea>
+                    <label for="author" class="form-label">Author</label>
+                    <textarea class="form-control mb-3" id="author" rows="1"></textarea>
+                    <label for="pages" class="form-label">Pages</label>
+                    <textarea class="form-control mb-3" id="pages" rows="1"></textarea>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="read">
+                        <label class="form-check-label mb-3" for="flexCheckDefault">
+                        Read
+                        </label>
                     </div>
+                    <button type="submit" class="btn btn-dark">Submit</button>
                 </form>
             </div>
         </div>
-    </div>
     <script src="books.js"></script>
 </body>
 </html>
