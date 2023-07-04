@@ -37,13 +37,13 @@ function render() {
         let book = myLibrary[i];
         let bookEl = document.createElement("div");
         bookEl.innerHTML = `
-        <div class="card mb-2 mx-2" style="width: 18rem;">
+        <div class="card mb-2 mx-2" style="width: 18rem; color: black;">
             <div class="card-body text-center">
                 <h3 class="card-title">${book.title}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${book.author}</h6>
                 <p class="card-text">${book.pages}</p>
-                <p>${book.read ? `<button type="button" class="btn btn-info" onClick="toggleRead(${i})">Read</button>` : `<button type="button" class="btn btn-warning" onClick="toggleRead(${i})">Not Read Yet</button>`}</p>
-                <button type="button" class="btn btn-danger" onclick="removeBook(${i})">Remove</button>
+                <p>${book.read ? `<button type="button" class="btn btn-secondary" onClick="toggleRead(${i})">Read</button>` : `<button type="button" class="btn btn-light" onClick="toggleRead(${i})">Not Read Yet</button>`}</p>
+                <button type="button" class="btn btn-dark" onclick="removeBook(${i})">Remove</button>
             </div>
         </div>
         `
