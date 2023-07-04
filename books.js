@@ -21,6 +21,15 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
+Book.prototype.toggleRead = function() {
+    this.read = !this.read
+}
+
+function toggleRead(index){
+    myLibrary[index].toggleRead();
+    render()
+}
+
 function render() {
     let libraryEl = document.querySelector("#library");
     libraryEl.innerHTML = "";
@@ -28,11 +37,13 @@ function render() {
         let book = myLibrary[i];
         let bookEl = document.createElement("div");
         bookEl.innerHTML = `
-        <div class="card col-md-2 mb-4" style="width: 18rem;">
+        <div class="card mb-2 mx-2" style="width: 18rem;">
             <div class="card-body text-center">
                 <h3 class="card-title">${book.title}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${book.author}</h6>
                 <p class="card-text">${book.pages}</p>
+                <p>${book.read ? `<button type="button" class="btn btn-info" onClick="toggleRead(${i})">Read</button>` : `<button type="button" class="btn btn-warning" onClick="toggleRead(${i})">Not Read Yet</button>`}</p>
+                <button type="button" class="btn btn-danger" onclick="removeBook(${i})">Remove</button>
             </div>
         </div>
         `
@@ -48,5 +59,9 @@ function addBookToLibrary(event) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
     render();
+}
 
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    render();
 }
